@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Empty Page</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="">
+
+    <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                        </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                            </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="contacts.html">Contacts</a></li>
+                                <li><a href="mailbox.html">Mailbox</a></li>
+                                <li class="divider"></li>
+                                <li><a href="login.html">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+
+                    <li class="special_link">
+                        <a href="package.html"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+
+
+            <div class="wrapper wrapper-content">
+
+
+                <div class="row">
+                    <div class="com-md-12">
+
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Renovaciones <small class="m-l-sm">Renovaciones registrada en una transacción</small></h5>
+                                <div class="ibox-tools">
+
+
+
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="busqueda" id="txtBusqueda" placeholder="Ingrese el ID" >
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button class="btn btn-primary" onclick="buscar()">Buscar</button>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                               
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+
+                                            <table id="tbRenovaciones" class="table table-striped hidden">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID REN.</th>
+                                                        <th>ID TRANS.</th>
+                                                        <th>Transacción</th>
+                                                        <th>Estado</th>
+                                                        <th>Fecha</th>
+                                                        <th>ren_nu_com_pre_sol</th>
+                                                        <th>ren_nu_com_emi_cert</th>
+                                                        <th>tren_titulo_renov</th>
+                                                        <th>ren_titularactual</th>
+
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr w3-repeat="renovaciones">
+                                                        <td>{{id_renovaciones}}</td>
+                                                        <td>{{ren_sol_iepi}}</td>
+                                                        <td>{{nombre_solicitud}}</td>
+                                                        <td>{{ren_estado}}</td>
+                                                        <td>{{ren_fecha_pre}}</td>
+                                                        <td>{{ren_nu_com_pre_sol}}</td>
+                                                        <td>{{ren_nu_com_emi_cert}}</td>
+                                                        <td>{{tren_titulo_renov}}</td>
+                                                        <td>{{ren_titularactual}}</td>
+
+                                                        <td>
+                                                            <button class="btn btn-primary btn-sm" onclick="abrirModal('{{id_renovaciones}}')">Editar</button>
+                                                            <button class="btn btn-danger btn-sm">Eliminar</button>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>   
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="ibox-footer">
+                                <span class="pull-right">
+                                  The righ side of the footer
+                              </span>
+                              This is simple footer example
+                          </div>
+                      </div>
+
+
+
+
+                  </div>
+
+              </div>
+          </div>
+          <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Agregar</h4>
+                <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+            </div>
+            <div class="modal-body">
+                <form id="formRenovacion" class="form-horizontal">
+                    <div class="form-group"><label class="col-lg-2 control-label">Nombre solicitud</label>
+
+                        <div class="col-lg-10"><input required type="text" placeholder="Nombre de la solicitud" class="form-control" id="nombre_solicitud">
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="col-lg-2 control-label">Estado</label>
+
+                        <div class="col-lg-10">
+                            <select required class="form-control" name="ren_estado" id="ren_estado">
+                                <option value="Estado 1">Estado 1</option>
+                                <option value="Estado 2">Estado 2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-lg-2 control-label">Fecha</label>
+
+                        <div class="col-lg-10"><input required type="date" placeholder="Seleccione una fecha" class="form-control" name="ren_fecha_pre" id="ren_fecha_pre">
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-lg-2 control-label">ren_nu_com_pre_sol</label>
+
+                        <div class="col-lg-10"><input required type="text" placeholder="Nombre de la solicitud" class="form-control" name="ren_nu_com_pre_sol" id="ren_nu_com_pre_sol">
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-lg-2 control-label">ren_nu_com_emi_cert</label>
+
+                        <div class="col-lg-10"><input required type="text" placeholder="Nombre de la solicitud" class="form-control" name="ren_nu_com_emi_cert" id="ren_nu_com_emi_cert">
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-lg-2 control-label">tren_titulo_renov</label>
+
+                        <div class="col-lg-10"><input required type="text" placeholder="Nombre de la solicitud" class="form-control" name="tren_titulo_renov" id="tren_titulo_renov">
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-lg-2 control-label">ren_titularactual</label>
+
+                        <div class="col-lg-10"><input required type="text" placeholder="Nombre de la solicitud" class="form-control" name="ren_titularactual" id="ren_titularactual">
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="ren_sol_iepi" id="ren_sol_iepi">
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button id="btnGuardar" class="btn btn-sm btn-primary" type="button">Guardar renovación</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Cerrar formulario</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="js/plugins/validate/jquery.validate.min.js"></script>
+<script src="js/plugins/validate/spanish.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script src="js/w3.js"></script>
+
+<script type="text/javascript">
+
+    function buscar() {
+        var termino = $('#txtBusqueda').val();
+        
+        if (termino!='') {
+            $.get( "/renovacion/read",{data: termino}, function( data ) {
+                if (data.length==0) {
+                    $("#tbRenovaciones").addClass("hidden");
+                
+            } else {
+                $("#tbRenovaciones").removeClass("hidden");
+               w3.displayObject("tbRenovaciones", {renovaciones: data});
+           }
+
+       });
+        } 
+    }
+
+    function abrirModal(id) {
+        $.get( "/renovacion/read/"+id, function( data ) {
+          console.log(data)
+          
+          $('#nombre_solicitud').val(data.nombre_solicitud);
+          $('#ren_estado').val(data.ren_estado);
+          $('#ren_fecha_pre').val(new Date(data.ren_fecha_pre));
+          $('#ren_nu_com_pre_sol').val(data.ren_nu_com_pre_sol);
+          $('#ren_nu_com_emi_cert').val(data.ren_nu_com_emi_cert);
+          $('#tren_titulo_renov').val(data.tren_titulo_renov);
+          $('#ren_titularactual').val(data.ren_titularactual);
+          $('#ren_sol_iepi').val(data.ren_sol_iepi);
+          $('#myModal').modal();
+      });
+    }
+
+    $('#btnGuardar').click(function(e) {
+        if ($('#formRenovacion').valid()) {
+            var data = $('#formRenovacion').serialize();
+            $.post( "/renovacion/create",data, function( data ) {
+              if (data==true) {
+                $('#myModal').modal('hide');
+                buscar();
+            } else {
+                
+            }
+        });
+        } 
+        
+
+    })
+
+    $('#txtBusqueda').keypress(function(e) {
+        if(e.which == 13) {
+            buscar();
+        }
+    });
+</script>
+
+
+
+
+</body>
+
+</html>
